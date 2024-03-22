@@ -1,0 +1,61 @@
+{{ define "main" }}
+  <div class="prose mb-10">
+    <h1>{{ .Title }}</h1>
+    <p>
+      <svg
+        class="inline w-5 h-5 text-orange-500"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+        data-slot="icon">
+        <path
+          fill-rule="evenodd"
+          d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+          clip-rule="evenodd"></path>
+      </svg>
+      Subscribe via
+      <a href="/index.xml" class="underline hover:no-underline">RSS</a>.
+    </p>
+  </div>
+
+  {{ range (.Data.Pages.GroupByDate "2006") }}
+    <section>
+      <h2 class="mb-3 text-base font-black">{{ .Key }}</h2>
+      <div class="mb-12">
+        {{ range .Pages }}
+          {{ $dateMachine := .Date | time.Format
+            "2006-01-02T15:04:05-07:00"
+          }}
+          {{ $dateHuman := .Date | time.Format
+            ":date_long"
+          }}
+          <article class="md:flex justify-between mb-1">
+            <h4>
+              <a
+                href="{{ .RelPermalink }}"
+                aria-label="{{ .LinkTitle }}"
+                class="text-gray-800 font-normal no-underline hover:underline">
+                {{ .LinkTitle }}
+              </a>
+            </h4>
+
+            <div class="mt-1 mb-6 sm:m-0 shrink-0">
+              <dl>
+                <dt class="sr-only">Published at</dt>
+                <dd>
+                  <time
+                    aria-label="Published on March 09, 2024"
+                    class="text-gray-600 text-sm font-medium tabular-nums"
+                    datetime="{{ $dateMachine }}">
+                    {{ $dateHuman }}
+                  </time>
+                </dd>
+              </dl>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
