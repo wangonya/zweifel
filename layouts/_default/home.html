@@ -15,22 +15,21 @@
     {{ .Content }}
   </div>
 
-  <div class="my-16">
-    <h3 class="mb-2 text-slate-900 font-medium">On the web</h3>
+  {{ if .Site.Menus.socials }}
+    <div class="my-16">
+      <h3 class="mb-2 text-slate-900 font-medium">On the web</h3>
 
-    <ul class="flex space-x-4">
-      {{- range .Site.Menus.socials }}
-        <li>
-          <a href="{{ .URL }}" class="underline"> {{ .Name }} </a>
-        </li>
-      {{- end }}
-    </ul>
-  </div>
-
+      <ul class="flex space-x-4">
+        {{- range .Site.Menus.socials }}
+          <li>
+            <a href="{{ .URL }}" class="underline"> {{ .Name }} </a>
+          </li>
+        {{- end }}
+      </ul>
+    </div>
+  {{ end }}
   {{- $numberOfPostsInHomePage := site.Params.numberOfPostsInHomePage }}
-  {{- if ne
-    $numberOfPostsInHomePage 0
-  }}
+  {{- if ne $numberOfPostsInHomePage 0 }}
     <div class="my-24">
       <h3 class="mb-4 text-slate-900 font-medium">Latest Posts</h3>
 
