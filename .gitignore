@@ -16,4 +16,11 @@ hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
 
+# Dependency directories
+node_modules/
+
+package.json
+package-lock.json
+.prettierrc
+
 # End of https://www.toptal.com/developers/gitignore/api/hugo
