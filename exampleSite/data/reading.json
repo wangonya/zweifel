@@ -1,0 +1,13 @@
+[
+  {
+    "year": "2024",
+    "books": [
+      {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "finishedOn": "2024-01-01",
+        "rating": "5"
+      }
+    ]
+  }
+]
