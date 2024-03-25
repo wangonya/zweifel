@@ -1,6 +1,6 @@
 +++
 title = 'Reading'
+layout = 'reading'
 +++
 
-- Book 1
-- Book 2
+This is my reading page.
