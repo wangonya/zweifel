@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [params]
+author = "John Doe"
+authorTitle = "Developer"
 numberOfPostsInHomePage = 10 # -1 for all posts, 0 for no posts
 
 
