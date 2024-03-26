@@ -75,7 +75,7 @@ pre {
   font-family:
     SFMono-Regular,
     ui-monospace,
-    SFMono-Regular,
+    Fira Code,
     Menlo,
     Monaco,
     Consolas,
@@ -687,21 +687,8 @@ video {
 
 .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   color: var(--tw-prose-code);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.875em;
-  word-break: break-all;
-}
-
-.prose
-  :where(code):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  ):before {
-  content: "`";
-}
-
-.prose
-  :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)):after {
-  content: "`";
 }
 
 .prose
@@ -746,21 +733,20 @@ video {
 }
 
 .prose :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  color: var(--tw-prose-pre-code);
-  background-color: var(--tw-prose-pre-bg);
+  background-color: var(--tw-prose-pre-bg) !important;
   overflow-x: auto;
   font-weight: 400;
   font-size: 0.875em;
   line-height: 1.7142857;
   margin-top: 1.7142857em;
   margin-bottom: 1.7142857em;
+  border: 1px solid var(--tw-prose-quote-borders);
   border-radius: 0.375rem;
   padding: 0.8571429em 1.1428571em;
 }
 
 .prose
   :where(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  background-color: transparent;
   border-width: 0;
   border-radius: 0;
   padding: 0;
@@ -769,20 +755,6 @@ video {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
-}
-
-.prose
-  :where(pre code):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  ):before {
-  content: none;
-}
-
-.prose
-  :where(pre code):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  ):after {
-  content: none;
 }
 
 .prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
@@ -867,8 +839,7 @@ video {
   --tw-prose-kbd: #111827;
   --tw-prose-kbd-shadows: 17 24 39;
   --tw-prose-code: #111827;
-  --tw-prose-pre-code: #e5e7eb;
-  --tw-prose-pre-bg: #1f2937;
+  --tw-prose-pre-bg: #f9f9f9;
   --tw-prose-th-borders: #d1d5db;
   --tw-prose-td-borders: #e5e7eb;
   --tw-prose-invert-body: #d1d5db;
@@ -2571,10 +2542,6 @@ h6:hover .prose .heading-permalink,
 .prose .heading-permalink:hover {
   text-decoration: none;
   color: #ccc;
-}
-
-.prose pre code:after {
-  display: none;
 }
 
 .footnotes {
