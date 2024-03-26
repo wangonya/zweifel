@@ -17,8 +17,15 @@
       </div>
     {{ end }}
     {{ .Content }}
-    {{ partial "terms.html" (dict "taxonomy" "tags"
-      "page" .)
-    }}
+    <span id="tags" class="text-sm">
+      {{ if .Params.tags }}🏷&nbsp;{{ end }}
+      {{ range $key, $value := .Params.tags }}
+        <a href="/tags/{{ $value | urlize }}">{{ $value }}</a
+        >{{ if ne $key (sub (len $.Params.tags) 1) }}
+          ,
+        {{ else }}
+        {{ end }}
+      {{ end }}
+    </span>
   </article>
 {{ end }}
