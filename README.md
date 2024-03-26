@@ -2,6 +2,8 @@
 
 A hugo theme based on @stefanzweifel's site (as of March 22, 2024 at least).
 
+[Sample site](https://wangonya.com)
+
 ## Features
 
 Nothing special. Looks pretty good though.
