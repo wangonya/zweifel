@@ -1,5 +1,5 @@
 +++
-title = 'Home'
+title = 'About'
 +++
 
 Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
