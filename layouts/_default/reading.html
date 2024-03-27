@@ -1,9 +1,7 @@
 {{ define "main" }}
   <div class="prose mb-10">
     <h1 class="p-name">{{ .Title }}</h1>
-    {{ with $.Site.GetPage "page" "reading" }}
-      {{ .Content }}
-    {{ end }}
+    {{ with $.Site.GetPage "page" "reading" }}{{ .Content }}{{ end }}
   </div>
   {{- $items := $.Site.Data.reading }}
   {{ range $items }}
