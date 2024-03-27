@@ -17,15 +17,14 @@
       </div>
     {{ end }}
     {{ .Content }}
-    <span id="tags" class="text-sm">
+    <div class="text-sm mt-8">
       {{ if .Params.tags }}🏷&nbsp;{{ end }}
       {{ range $key, $value := .Params.tags }}
         <a href="/tags/{{ $value | urlize }}">{{ $value }}</a
         >{{ if ne $key (sub (len $.Params.tags) 1) }}
           ,
-        {{ else }}
         {{ end }}
       {{ end }}
-    </span>
+    </div>
   </article>
 {{ end }}
