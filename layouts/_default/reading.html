@@ -8,7 +8,7 @@
     <section class="mb-12">
       <h2 class="mb-3 text-base font-black">{{ .year }}</h2>
       <div class="space-y-4 sm:space-y-1">
-        {{ range .books }}
+        {{ range sort .books ".finishedOn" "desc" }}
           <article
             class="grid sm:grid-cols-9 gap-x-2 md:gap-y-2 text-sm"
             itemprop="mainEntity"
