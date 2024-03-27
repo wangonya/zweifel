@@ -4,6 +4,10 @@ A hugo theme based on @stefanzweifel's site (as of March 22, 2024 at least).
 
 [Sample site](https://wangonya.com)
 
+![home-screenshot](./home-screenshot.jpg)
+
+![post-screenshot](./post-screenshot.jpg)
+
 ## Features
 
 Nothing special. Looks pretty good though.
