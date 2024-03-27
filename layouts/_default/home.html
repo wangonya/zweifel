@@ -47,15 +47,19 @@
 
       <ul class="text-slate-800 space-y-2">
         {{ range $posts }}
-          <li class="flex">
-            <span
-              class="shrink-0 grow-0 inline-block w-20 text-gray-500 tabular-nums">
-              {{ .Date.Format "02/2006" }}
-            </span>
-            <a href="{{ .RelPermalink }}" class="underline hover:no-underline">
-              {{ .LinkTitle }}
-            </a>
-          </li>
+          {{ if .Date }}
+            <li class="flex">
+              <span
+                class="shrink-0 grow-0 inline-block w-20 text-gray-500 tabular-nums">
+                {{ .Date.Format "02/2006" }}
+              </span>
+              <a
+                href="{{ .RelPermalink }}"
+                class="underline hover:no-underline">
+                {{ .LinkTitle }}
+              </a>
+            </li>
+          {{ end }}
         {{ end }}
       </ul>
     </div>
