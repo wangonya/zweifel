@@ -2,7 +2,7 @@
 
 A hugo theme based on @stefanzweifel's site (as of March 22, 2024 at least).
 
-[Sample site](https://wangonya.com)
+[Sample site](https://main--zweifel-site.netlify.app/)
 
 ![home-screenshot](./home-screenshot.jpg)
 
